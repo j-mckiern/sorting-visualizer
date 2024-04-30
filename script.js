@@ -13,12 +13,11 @@ document.getElementById('quick').addEventListener('click',function(){
     quickSort(array, 0, array.length -1);
 });
 
-/*
+
 document.getElementById('bubble').addEventListener('click',function(){
-    
+    bubblesort(array, array.length);
 });
 
-*/
 
 function generateArray(){
     arrayContainer.innerHTML = '';
