@@ -9,10 +9,11 @@ document.getElementById('merge').addEventListener('click',function(){
     mergeSort(array, 0, array.length -1);
 });
 
-/*
 document.getElementById('quick').addEventListener('click',function(){
-    
+    quickSort(array, 0, array.length -1);
 });
+
+/*
 document.getElementById('bubble').addEventListener('click',function(){
     
 });
