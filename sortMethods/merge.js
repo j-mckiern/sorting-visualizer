@@ -40,7 +40,7 @@ async function merge(arr, l, m, r, isFinalMerge) {
         }
         document.getElementsByClassName('bar')[k].style.height = `${array[k] * maxHeight}px`;
         document.getElementsByClassName('bar')[k].style.backgroundColor = isFinalMerge ? 'green' : '#444444';
-        sound(50, array[k] * 700, .5);
+        sound(50, arr[k] * 700, .5);
         k++;
     }
 
@@ -49,7 +49,7 @@ async function merge(arr, l, m, r, isFinalMerge) {
         arr[k] = L[i];
         document.getElementsByClassName('bar')[k].style.height = `${array[k] * maxHeight}px`;
         document.getElementsByClassName('bar')[k].style.backgroundColor = isFinalMerge ? 'green' : '#444444';
-        sound(50, array[k] * 700, .5);
+        sound(50, arr[k] * 700, .5);
         i++;
         k++;
     }
@@ -59,7 +59,7 @@ async function merge(arr, l, m, r, isFinalMerge) {
         arr[k] = R[j];
         document.getElementsByClassName('bar')[k].style.height = `${array[k] * maxHeight}px`;
         document.getElementsByClassName('bar')[k].style.backgroundColor = isFinalMerge ? 'green' : '#444444';
-        sound(50, array[k] * 700, .5);
+        sound(50, arr[k] * 700, .5);
         j++;
         k++;
     }
