@@ -1,11 +1,15 @@
-async function bubblesort(arr, n){
+async function bubbleSort(arr, n){
     var i, j, temp;
     var swapped;
     const maxHeight = document.getElementById('array-container').clientHeight;
 
     for (i = 0; i < n - 1; i++) {
+        if (!isSorting) return;
+        
         swapped = false;
         for (j = 0; j < n - i - 1; j++) {
+            if (!isSorting) return;
+            
             document.getElementsByClassName('bar')[j].style.backgroundColor = 'red';
             document.getElementsByClassName('bar')[j + 1].style.backgroundColor = 'blue';
             await waitFor(50);
@@ -34,6 +38,7 @@ async function bubblesort(arr, n){
     for (j = 0; j < n; j++) {
         document.getElementsByClassName('bar')[j].style.backgroundColor = 'green';
     }
+    isSorting = false;
 }
 
 async function printArray(arr, size) {
