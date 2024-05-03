@@ -1,11 +1,12 @@
 async function mergeSort(arr, l, r) {
-    if (l >= r) {
+    if (!isSorting || l >= r) {
         return; 
     }
     const m =l+ parseInt((r-l)/2);
     await mergeSort(arr, l, m);
     await mergeSort(arr,m+1,r);
     await merge(arr,l,m,r, l == 0 && r == arr.length - 1);
+    if (l == 0 && r == arr.length - 1) isSorting = false;
 }
 
 async function merge(arr, l, m, r, isFinalMerge) {
