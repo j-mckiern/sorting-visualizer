@@ -37,6 +37,7 @@ async function partition(arr, low, high){
 }
 
 async function quickSort(arr, low, high){
+    if (!isSorting) return;
     if(low < high){
         let pi = await partition(arr, low, high);
 
@@ -49,6 +50,7 @@ async function quickSort(arr, low, high){
             document.getElementsByClassName('bar')[low].style.backgroundColor = 'green';
         }
     }
+    if (low == 0 && high == arr.length - 1) isSorting = false;
 }
 
 function waitFor(ms) {
