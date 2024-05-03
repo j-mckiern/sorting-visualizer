@@ -1,21 +1,37 @@
 const arrayContainer = document.getElementById('array-container');
 const array=[];
+let isSorting = false;
 
 document.getElementById('generate-array').addEventListener('click',function(){
-    generateArray();
+    location.reload();
 });
 
 document.getElementById('merge').addEventListener('click',function(){
-    mergeSort(array, 0, array.length -1);
+    if (isSorting){
+        alert("A sorting operation is already in progress. Please wait until it completes or generate a new array.");
+        return;    
+    }
+    isSorting = true;
+    mergeSort(array, 0, array.length - 1).then(() => isSorting = false);
 });
 
 document.getElementById('quick').addEventListener('click',function(){
-    quickSort(array, 0, array.length -1);
+    if (isSorting){
+        alert("A sorting operation is already in progress. Please wait until it completes or generate a new array.");
+        return;    
+    }
+    isSorting = true;
+    quickSort(array, 0, array.length - 1).then(() => isSorting = false);
 });
 
 
 document.getElementById('bubble').addEventListener('click',function(){
-    bubblesort(array, array.length);
+    if (isSorting){
+        alert("A sorting operation is already in progress. Please wait until it completes or generate a new array.");
+        return;    
+    }
+    isSorting = true;
+    bubbleSort(array, array.length).then(() => isSorting = false);
 });
 
 
